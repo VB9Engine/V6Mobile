@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="V6 Mobile - Professional phone repair services, FRP removal, and mobile accessories">
+    <meta name="keywords" content="phone repair, mobile services, FRP removal, Google apps installation">
+    <title>V6 Mobile - Professional Phone Repair Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --primary-color: #3498db;
+            --primary-dark: #2980b9;
+            --secondary-color: #2c3e50;
+            --secondary-light: #34495e;
+            --accent-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --dark-color: #333;
+            --gray-color: #95a5a6;
+            --gray-dark: #7f8c8d;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --max-width: 1200px;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: var(--secondary-light);
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 2rem 0;
+            min-height: calc(100vh - 140px);
+        }
+
+        /* Showcase Styles */
+        .showcase {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--box-shadow);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .showcase h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Shop Details Styles */
+        .shop-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .detail-card {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .detail-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .detail-card ul {
+            list-style-position: inside;
+        }
+
+        .detail-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* POS System Styles */
+        .pos-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background-color: var(--gray-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--gray-dark);
+        }
+
+        .btn-success {
+            background-color: var(--success-color);
+        }
+
+        .btn-warning {
+            background-color: var(--warning-color);
+        }
+
+        .btn-danger {
+            background-color: var(--danger-color);
+        }
+
+        /* Services Styles */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .service-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Loading Spinner */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Notifications */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius);
+            color: white;
+            z-index: 1001;
+            box-shadow: var(--box-shadow);
+            transform: translateX(150%);
+            transition: transform 0.3s ease;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            background-color: var(--success-color);
+        }
+
+        .notification.error {
+            background-color: var(--danger-color);
+        }
+
+        .notification.info {
+            background-color: var(--primary-color);
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-1 {
+            margin-top: 1rem;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        .mb-1 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 70px);
+                background-color: var(--secondary-color);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 2rem;
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            nav ul li {
+                margin: 1rem 0;
+            }
+
+            .pos-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+
+            .showcase {
+                padding: 1.5rem;
+            }
+
+            .shop-details,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">📱</span>
+                <h1>V6 Mobile</h1>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-target="showcase1">Shop Details</a></li>
+                    <li><a href="#" class="nav-link" data-target="showcase2">POS System</a></li>
+                    <li><a href="#" class="nav-link" data-target="showcase3">Services</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="content-area">
+            <!-- Content will be loaded here dynamically -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 V6 Mobile. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><span>📘</span></a>
+                    <a href="#" aria-label="Twitter"><span>🐦</span></a>
+                    <a href="#" aria-label="Instagram"><span>📷</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <!-- Module Templates -->
+    <template id="showcase1-template">
+        <div class="showcase">
+            <h2>Shop Details</h2>
+            <div class="shop-details">
+                <div class="detail-card">
+                    <h3>Working Hours</h3>
+                    <p><strong>Monday - Friday:</strong> 9:00 AM - 7:00 PM</p>
+                    <p><strong>Saturday:</strong> 10:00 AM - 6:00 PM</p>
+                    <p><strong>Sunday:</strong> 11:00 AM - 5:00 PM</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Location</h3>
+                    <p>123 Mobile Street</p>
+                    <p>Tech City, TC 12345</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@v6mobile.com</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Available Services</h3>
+                    <ul>
+                        <li>Phone Repair</li>
+                        <li>Screen Replacement</li>
+                        <li>Battery Replacement</li>
+                        <li>Software Issues</li>
+                        <li>FRP Lock Removal</li>
+                        <li>Data Recovery</li>
+                    </ul>
+                </div>
+                <div class="detail-card">
+                    <h3>Accessories</h3>
+                    <ul>
+                        <li>Phone Cases</li>
+                        <li>Screen Protectors</li>
+                        <li>Chargers & Cables</li>
+                        <li>Power Banks</li>
+                        <li>Headphones</li>
+                        <li>Bluetooth Devices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="showcase2-template">
+        <div class="showcase">
+            <h2>POS System</h2>
+            <p>Access the Point of Sale system for V6 Mobile. You can view transactions or edit product information based on your permissions.</p>
+            
+            <div class="pos-actions">
+                <button id="view-pos" class="btn">View POS</button>
+                <button id="edit-pos" class="btn btn-secondary">Edit POS</button>
+            </div>
+            
+            <div class="mt-2">
+                <h3>Recent Transactions</h3>
+                <div id="transaction-list">
+                    <!-- Transactions will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="showcase3-template">
+        <div class="showcase">
+            <h2>Services</h2>
+            <p>Select a service from the options below:</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>FRP Resolving</h3>
+                    <p>Factory Reset Protection removal service for Android devices.</p>
+                    <button id="frp-btn" class="btn">FRP Service</button>
+                </div>
+                <div class="service-card">
+                    <h3>Google App Installing</h3>
+                    <p>Installation of Google Apps and services on compatible devices.</p>
+                    <button id="google-btn" class="btn">Google Apps</button>
+                </div>
+                <div class="service-card">
+                    <h3>Free Software</h3>
+                    <p>Download free software and utilities provided by V6 Mobile.</p>
+                    <button id="software-btn" class="btn">Free Software</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="pos-template">
+        <div class="showcase">
+            <h2>POS System</h2>
+            
+            <form id="pos-form">
+                <div class="form-group">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-price">Price</label>
+                    <input type="number" id="product-price" step="0.01" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-quantity">Quantity</label>
+                    <input type="number" id="product-quantity" min="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customer-name">Customer Name</label>
+                    <input type="text" id="customer-name">
+                </div>
+                
+                <button type="submit" class="btn" id="pos-submit-btn">
+                    <span class="btn-text">Save Transaction</span>
+                    <span class="loading hidden"></span>
+                </button>
+            </form>
+            
+            <div class="mt-2">
+                <h3>Transaction History</h3>
+                <div id="transaction-history">
+                    <!-- Transaction history will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="frp-template">
+        <div class="showcase">
+            <h2>FRP Resolving Service</h2>
+            <p>Submit details for FRP lock removal service.</p>
+            
+            <form id="frp-form">
+                <div class="form-group">
+                    <label for="device-model">Device Model</label>
+                    <input type="text" id="device-model" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="android-version">Android Version</label>
+                    <input type="text" id="android-version" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customer-name">Customer Name</label>
+                    <input type="text" id="customer-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customer-phone">Customer Phone</label>
+                    <input type="tel" id="customer-phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service-notes">Service Notes</label>
+                    <textarea id="service-notes"></textarea>
+                </div>
+                
+                <button type="submit" class="btn" id="frp-submit-btn">
+                    <span class="btn-text">Submit FRP Request</span>
+                    <span class="loading hidden"></span>
+                </button>
+            </form>
+        </div>
+    </template>
+
+    <template id="google-apps-template">
+        <div class="showcase">
+            <h2>Google App Installation</h2>
+            <p>Request Google Apps installation service for your device.</p>
+            
+            <form id="google-form">
+                <div class="form-group">
+                    <label for="device-model">Device Model</label>
+                    <input type="text" id="device-model" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="android-version">Android Version</label>
+                    <input type="text" id="android-version" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="apps-needed">Apps Needed</label>
+                    <select id="apps-needed" multiple>
+                        <option value="play-store">Google Play Store</option>
+                        <option value="gmail">Gmail</option>
+                        <option value="maps">Google Maps</option>
+                        <option value="drive">Google Drive</option>
+                        <option value="photos">Google Photos</option>
+                        <option value="youtube">YouTube</option>
+                    </select>
+                    <p class="mt-1"><small>Hold Ctrl (or Cmd on Mac) to select multiple apps</small></p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customer-name">Customer Name</label>
+                    <input type="text" id="customer-name" required>
+                </div>
+                
+                <button type="submit" class="btn" id="google-submit-btn">
+                    <span class="btn-text">Submit Installation Request</span>
+                    <span class="loading hidden"></span>
+                </button>
+            </form>
+        </div>
+    </template>
+    
+    <template id="software-template">
+        <div class="showcase">
+            <h2>Free Software from V6</h2>
+            <p>Download free software and utilities provided by V6 Mobile.</p>
+            
+            <form id="software-form">
+                <div class="form-group">
+                    <label for="software-category">Software Category</label>
+                    <select id="software-category">
+                        <option value="">Select a category</option>
+                        <option value="system-tools">System Tools</option>
+                        <option value="security">Security</option>
+                        <option value="productivity">Productivity</option>
+                        <option value="entertainment">Entertainment</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="software-name">Software Name</label>
+                    <input type="text" id="software-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customer-email">Your Email</label>
+                    <input type="email" id="customer-email" required>
+                </div>
+                
+                <button type="submit" class="btn" id="software-submit-btn">
+                    <span class="btn-text">Request Download Link</span>
+                    <span class="loading hidden"></span>
+                </button>
+            </form>
+            
+            <div class="mt-2">
+                <h3>Popular Downloads</h3>
+                <ul>
+                    <li>V6 System Cleaner</li>
+                    <li>V6 Battery Optimizer</li>
+                    <li>V6 File Manager</li>
+                    <li>V6 Security Scanner</li>
+                </ul>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        // Main application script for V6 Mobile
+
+        // DOM elements
+        const contentArea = document.getElementById('content-area');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('nav ul');
+        const notificationContainer = document.getElementById('notification-container');
+
+        // Data storage (in a real app, this would be a backend API)
+        const appData = {
+            transactions: JSON.parse(localStorage.getItem('v6-transactions')) || [],
+            serviceRequests: JSON.parse(localStorage.getItem('v6-service-requests')) || []
+        };
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load the default showcase (Shop Details)
+            loadModule('showcase1');
+            
+            // Add event listeners to navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = this.getAttribute('data-target');
+                    loadModule(target);
+                    
+                    // Update active nav link
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('nav') && !e.target.closest('.mobile-menu-btn')) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Function to load modules dynamically
+        function loadModule(moduleName) {
+            const template = document.getElementById(`${moduleName}-template`);
+            if (template) {
+                contentArea.innerHTML = '';
+                const content = document.importNode(template.content, true);
+                contentArea.appendChild(content);
+                
+                // Initialize any module-specific functionality
+                initializeModule(moduleName);
+            } else {
+                contentArea.innerHTML = `
+                    <div class="showcase">
+                        <h2>Error</h2>
+                        <p>Unable to load the requested content. Please try again.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Function to initialize module-specific functionality
+        function initializeModule(moduleName) {
+            switch(moduleName) {
+                case 'showcase2':
+                    initializePOSModule();
+                    break;
+                case 'showcase3':
+                    initializeServicesModule();
+                    break;
+                case 'pos':
+                    initializePOSPage();
+                    break;
+                case 'frp':
+                    initializeFRPPage();
+                    break;
+                case 'google-apps':
+                    initializeGoogleAppsPage();
+                    break;
+                case 'software':
+                    initializeSoftwarePage();
+                    break;
+            }
+        }
+
+        // POS Module initialization
+        function initializePOSModule() {
+            const viewBtn = document.getElementById('view-pos');
+            const editBtn = document.getElementById('edit-pos');
+            const transactionList = document.getElementById('transaction-list');
+            
+            // Load recent transactions
+            loadRecentTransactions(transactionList);
+            
+            if (viewBtn) {
+                viewBtn.addEventListener('click', function() {
+                    loadModule('pos');
+                });
+            }
+            
+            if (editBtn) {
+                editBtn.addEventListener('click', function() {
+                    // In a real application, you would check permissions here
+                    loadModule('pos');
+                });
+            }
+        }
+
+        // Services Module initialization
+        function initializeServicesModule() {
+            const frpBtn = document.getElementById('frp-btn');
+            const googleBtn = document.getElementById('google-btn');
+            const softwareBtn = document.getElementById('software-btn');
+            
+            if (frpBtn) {
+                frpBtn.addEventListener('click', function() {
+                    loadModule('frp');
+                });
+            }
+            
+            if (googleBtn) {
+                googleBtn.addEventListener('click', function() {
+                    loadModule('google-apps');
+                });
+            }
+            
+            if (softwareBtn) {
+                softwareBtn.addEventListener('click', function() {
+                    loadModule('software');
+                });
+            }
+        }
+
+        // POS Page initialization
+        function initializePOSPage() {
+            const posForm = document.getElementById('pos-form');
+            const transactionHistory = document.getElementById('transaction-history');
+            const submitBtn = document.getElementById('pos-submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loadingSpinner = submitBtn.querySelector('.loading');
+            
+            // Load transaction history
+            loadTransactionHistory(transactionHistory);
+            
+            if (posForm) {
+                posForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    btnText.classList.add('hidden');
+                    loadingSpinner.classList.remove('hidden');
+                    submitBtn.disabled = true;
+                    
+                    // Simulate API call delay
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    
+                    // Get form data
+                    const formData = {
+                        productName: document.getElementById('product-name').value,
+                        price: parseFloat(document.getElementById('product-price').value),
+                        quantity: parseInt(document.getElementById('product-quantity').value),
+                        customerName: document.getElementById('customer-name').value,
+                        date: new Date().toISOString(),
+                        id: Date.now().toString()
+                    };
+                    
+                    // Calculate total
+                    formData.total = formData.price * formData.quantity;
+                    
+                    // Save transaction
+                    appData.transactions.push(formData);
+                    localStorage.setItem('v6-transactions', JSON.stringify(appData.transactions));
+                    
+                    // Reset form
+                    posForm.reset();
+                    
+                    // Hide loading state
+                    btnText.classList.remove('hidden');
+                    loadingSpinner.classList.add('hidden');
+                    submitBtn.disabled = false;
+                    
+                    // Show success message
+                    showNotification('Transaction saved successfully!', 'success');
+                    
+                    // Reload transaction history
+                    loadTransactionHistory(transactionHistory);
+                });
+            }
+        }
+        
+        // FRP Page initialization
+        function initializeFRPPage() {
+            const frpForm = document.getElementById('frp-form');
+            const submitBtn = document.getElementById('frp-submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loadingSpinner = submitBtn.querySelector('.loading');
+            
+            if (frpForm) {
+                frpForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    btnText.classList.add('hidden');
+                    loadingSpinner.classList.remove('hidden');
+                    submitBtn.disabled = true;
+                    
+                    // Simulate API call delay
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    
+                    // Get form data
+                    const formData = {
+                        deviceModel: document.getElementById('device-model').value,
+                        androidVersion: document.getElementById('android-version').value,
+                        customerName: document.getElementById('customer-name').value,
+                        customerPhone: document.getElementById('customer-phone').value,
+                        serviceNotes: document.getElementById('service-notes').value,
+                        date: new Date().toISOString(),
+                        id: Date.now().toString(),
+                        type: 'FRP'
+                    };
+                    
+                    // Save service request
+                    appData.serviceRequests.push(formData);
+                    localStorage.setItem('v6-service-requests', JSON.stringify(appData.serviceRequests));
+                    
+                    // Reset form
+                    frpForm.reset();
+                    
+                    // Hide loading state
+                    btnText.classList.remove('hidden');
+                    loadingSpinner.classList.add('hidden');
+                    submitBtn.disabled = false;
+                    
+                    // Show success message
+                    showNotification('FRP service request submitted!', 'success');
+                });
+            }
+        }
+
+        // Google Apps Page initialization
+        function initializeGoogleAppsPage() {
+            const googleForm = document.getElementById('google-form');
+            const submitBtn = document.getElementById('google-submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loadingSpinner = submitBtn.querySelector('.loading');
+            
+            if (googleForm) {
+                googleForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    btnText.classList.add('hidden');
+                    loadingSpinner.classList.remove('hidden');
+                    submitBtn.disabled = true;
+                    
+                    // Simulate API call delay
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    
+                    // Get selected apps
+                    const appsSelect = document.getElementById('apps-needed');
+                    const selectedApps = Array.from(appsSelect.selectedOptions).map(option => option.value);
+                    
+                    // Get form data
+                    const formData = {
+                        deviceModel: document.getElementById('device-model').value,
+                        androidVersion: document.getElementById('android-version').value,
+                        customerName: document.getElementById('customer-name').value,
+                        apps: selectedApps,
+                        date: new Date().toISOString(),
+                        id: Date.now().toString(),
+                        type: 'Google Apps'
+                    };
+                    
+                    // Save service request
+                    appData.serviceRequests.push(formData);
+                    localStorage.setItem('v6-service-requests', JSON.stringify(appData.serviceRequests));
+                    
+                    // Reset form
+                    googleForm.reset();
+                    
+                    // Hide loading state
+                    btnText.classList.remove('hidden');
+                    loadingSpinner.classList.add('hidden');
+                    submitBtn.disabled = false;
+                    
+                    // Show success message
+                    showNotification('Google Apps installation request submitted!', 'success');
+                });
+            }
+        }
+
+        // Software Page initialization
+        function initializeSoftwarePage() {
+            const softwareForm = document.getElementById('software-form');
+            const submitBtn = document.getElementById('software-submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loadingSpinner = submitBtn.querySelector('.loading');
+            
+            if (softwareForm) {
+                softwareForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    btnText.classList.add('hidden');
+                    loadingSpinner.classList.remove('hidden');
+                    submitBtn.disabled = true;
+                    
+                    // Simulate API call delay
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    
+                    // Get form data
+                    const formData = {
+                        softwareCategory: document.getElementById('software-category').value,
+                        softwareName: document.getElementById('software-name').value,
+                        customerEmail: document.getElementById('customer-email').value,
+                        date: new Date().toISOString(),
+                        id: Date.now().toString(),
+                        type: 'Software Download'
+                    };
+                    
+                    // Save service request
+                    appData.serviceRequests.push(formData);
+                    localStorage.setItem('v6-service-requests', JSON.stringify(appData.serviceRequests));
+                    
+                    // Reset form
+                    softwareForm.reset();
+                    
+                    // Hide loading state
+                    btnText.classList.remove('hidden');
+                    loadingSpinner.classList.add('hidden');
+                    submitBtn.disabled = false;
+                    
+                    // Show success message
+                    showNotification('Software request submitted! Download link sent to your email.', 'success');
+                });
+            }
+        }
+
+        // Helper function to load recent transactions
+        function loadRecentTransactions(container) {
+            if (!container) return;
+            
+            const recentTransactions = appData.transactions.slice(-5).reverse();
+            
+            if (recentTransactions.length === 0) {
+                container.innerHTML = '<p>No recent transactions found.</p>';
+                return;
+            }
+            
+            container.innerHTML = `
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background-color: #f1f1f1;">
+                                <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd;">Product</th>
+                                <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd;">Customer</th>
+                                <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd;">Amount</th>
+                                <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd;">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${recentTransactions.map(transaction => `
+                                <tr>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid #ddd;">${transaction.productName}</td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid #ddd;">${transaction.customerName || 'N/A'}</td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid #ddd;">$${transaction.total.toFixed(2)}</td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid #ddd;">${new Date(transaction.date).toLocaleDateString()}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        // Helper function to load transaction history
+        function loadTransactionHistory(container) {
+            if (!container) return;
+            
+            const transactions = appData.transactions.slice().reverse();
+            
+            if (transactions.length === 0) {
+                container.innerHTML = '<p>No transaction history found.</p>';
+                return;
+            }
+            
+            container.innerHTML = `
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background-color: #f1f1f1;">
+                                <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd;">Product</th>
+                                <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd;">Price</th>
+                                <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd;">Qty</th>
+                                <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd;">Total</th>
+                                <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd;">Customer</th>
+                                <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd;">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${transactions.map(transaction => `
+                                <tr>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid #ddd;">${transaction.productName}</td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid #ddd;">$${transaction.price.toFixed(2)}</td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid #ddd;">${transaction.quantity}</td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid #ddd;">$${transaction.total.toFixed(2)}</td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid #ddd;">${transaction.customerName || 'N/A'}</td>
+                                    <td style="padding: 0.75rem; border-bottom: 1px solid #ddd;">${new Date(transaction.date).toLocaleDateString()}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        // Helper function to show notifications
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            
+            notificationContainer.appendChild(notification);
+            
+            // Show notification
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            // Hide and remove notification after 5 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
